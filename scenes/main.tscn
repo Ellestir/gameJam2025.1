@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://bnhlurl2hvw3c"]
 
-[ext_resource type="Texture2D" uid="uid://d31s031mc0amo" path="res://icon.svg" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://d31s031mc0amo" path="res://images/icon.svg" id="1_o5qli"]
 
 [node name="Main" type="Node"]
 
 [node name="Test" type="Test" parent="."]
-texture = ExtResource("1_ig7tw")
+texture = ExtResource("1_o5qli")

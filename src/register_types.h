@@ -7,5 +7,7 @@ using namespace godot;
 
 void initialize_test_module(ModuleInitializationLevel p_level);
 void uninitialize_test_module(ModuleInitializationLevel p_level);
+void initialize_hexboard_module(ModuleInitializationLevel p_level);
+void uninitialize_hexboard_module(ModuleInitializationLevel p_level);
 
 #endif // REGISTER_TYPES_H

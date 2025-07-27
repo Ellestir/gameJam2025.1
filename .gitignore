@@ -4,3 +4,4 @@
 *.os
 /bin/*.so
 .sconsign.dblite
+.vscode/settings.json

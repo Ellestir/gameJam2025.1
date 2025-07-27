@@ -6,6 +6,7 @@
 #include <godot_cpp/godot.hpp>
 
 #include "test.h"
+#include "hexBoard.h"
 
 using namespace godot;
 
@@ -23,6 +24,20 @@ void uninitialize_test_module(ModuleInitializationLevel p_level) {
 	}
 }
 
+void initialize_hexboard_module(ModuleInitializationLevel p_level)
+{
+	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
+		return;
+	}
+	GDREGISTER_RUNTIME_CLASS(HexBoard);
+}
+
+void uninitialize_hexboard_module(ModuleInitializationLevel p_level) {
+	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
+		return;
+	}
+}
+
 extern "C"
 {
 	// Initialization
@@ -30,6 +45,8 @@ extern "C"
 		godot::GDExtensionBinding::InitObject init_obj(p_get_proc_address, p_library, r_initialization);
 		init_obj.register_initializer(initialize_test_module);
 		init_obj.register_terminator(uninitialize_test_module);
+		init_obj.register_initializer(initialize_hexboard_module);
+		init_obj.register_terminator(uninitialize_hexboard_module);
 		init_obj.set_minimum_library_initialization_level(MODULE_INITIALIZATION_LEVEL_SCENE);
 
 		return init_obj.init();
