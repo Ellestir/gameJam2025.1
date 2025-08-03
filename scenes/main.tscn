@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnhlurl2hvw3c"]
+[gd_scene load_steps=5 format=3 uid="uid://bnhlurl2hvw3c"]
 
 [ext_resource type="Script" uid="uid://dov05uvlieel2" path="res://scripts/map.gd" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://dosexl2pso3b3" path="res://scripts/movement.gd" id="2_jyhfs"]
+[ext_resource type="Script" uid="uid://evy555tnjh8q" path="res://scripts/cardManager.gd" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://bbs8mh57hvt11" path="res://scenes/card.tscn" id="3_jyhfs"]
 
 [node name="Main" type="Node"]
 
@@ -12,5 +15,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.39298, 0)
 omni_range = 42.449
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -6)
 fov = 102.5
+script = ExtResource("2_jyhfs")
+
+[node name="CardManager" type="Node3D" parent="."]
+script = ExtResource("2_sugp2")
+
+[node name="Card" parent="CardManager" instance=ExtResource("3_jyhfs")]

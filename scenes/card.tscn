@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbs8mh57hvt11"]
+
+[ext_resource type="Texture2D" uid="uid://cfv8yjijy48qv" path="res://images/BasicCard.png" id="1_d81rb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6u4wf"]
+size = Vector3(1.09441, 1.92299, 0.083374)
+
+[node name="Card" type="Node3D"]
+
+[node name="CardImage" type="Sprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+texture = ExtResource("1_d81rb")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000785828, 0.00329399, -0.0010376)
+shape = SubResource("BoxShape3D_6u4wf")
