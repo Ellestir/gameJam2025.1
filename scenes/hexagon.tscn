@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy3ye30xi33my"]
+
+[ext_resource type="ArrayMesh" uid="uid://btkfjhjvdfgvi" path="res://models/Meshes/BasicHex_Cylinder.res" id="1_11ygp"]
+
+[node name="hexagon" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+mesh = ExtResource("1_11ygp")
+
+[node name="Marker3D" type="Marker3D" parent="."]
