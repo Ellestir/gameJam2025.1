@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnhlurl2hvw3c"]
+[gd_scene load_steps=6 format=3 uid="uid://bnhlurl2hvw3c"]
 
+[ext_resource type="Script" uid="uid://dsx3hxps6i3fc" path="res://scripts/global.gd" id="1_jyhfs"]
 [ext_resource type="Script" uid="uid://dov05uvlieel2" path="res://scripts/map.gd" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://dosexl2pso3b3" path="res://scripts/movement.gd" id="2_jyhfs"]
-[ext_resource type="Script" uid="uid://evy555tnjh8q" path="res://scripts/cardManager.gd" id="2_sugp2"]
-[ext_resource type="PackedScene" uid="uid://bbs8mh57hvt11" path="res://scenes/card.tscn" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dgt0mr1gllh0u" path="res://scenes/card.tscn" id="3_jyhfs"]
+[ext_resource type="Script" uid="uid://v5ua8e8tv3sh" path="res://scripts/handCardContainer.gd" id="4_tbgi4"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_jyhfs")
 
 [node name="map" type="Node3D" parent="."]
 script = ExtResource("1_o5qli")
@@ -19,7 +21,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -6)
 fov = 102.5
 script = ExtResource("2_jyhfs")
 
-[node name="CardManager" type="Node3D" parent="."]
-script = ExtResource("2_sugp2")
+[node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Card" parent="CardManager" instance=ExtResource("3_jyhfs")]
+[node name="HandCardContainer" type="HBoxContainer" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_tbgi4")
+
+[node name="Card" parent="UI/HandCardContainer" instance=ExtResource("3_jyhfs")]
+layout_mode = 2
+
+[connection signal="mouse_entered" from="UI/HandCardContainer" to="UI/HandCardContainer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/HandCardContainer" to="UI/HandCardContainer" method="_on_mouse_exited"]
