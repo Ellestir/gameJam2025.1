@@ -24,12 +24,36 @@ script = ExtResource("2_jyhfs")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="HandCardContainer" type="HBoxContainer" parent="UI"]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -270.0
+offset_top = -136.0
+offset_right = 272.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = -15
+alignment = 1
 script = ExtResource("4_tbgi4")
 
 [node name="Card" parent="UI/HandCardContainer" instance=ExtResource("3_jyhfs")]
 layout_mode = 2
+
+[node name="Card2" parent="UI/HandCardContainer" instance=ExtResource("3_jyhfs")]
+layout_mode = 2
+
+[node name="Card3" parent="UI/HandCardContainer" instance=ExtResource("3_jyhfs")]
+layout_mode = 2
+
+[node name="Card4" parent="UI/HandCardContainer" instance=ExtResource("3_jyhfs")]
+layout_mode = 2
+
+[node name="Card5" parent="UI/HandCardContainer" instance=ExtResource("3_jyhfs")]
+layout_mode = 2
+
+[node name="CardHolder" type="Node" parent="UI"]
 
 [connection signal="mouse_entered" from="UI/HandCardContainer" to="UI/HandCardContainer" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/HandCardContainer" to="UI/HandCardContainer" method="_on_mouse_exited"]
