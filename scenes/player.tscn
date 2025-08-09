@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://byatnybcyi6ut"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8vuu"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_u8vuu"]
+
+[node name="Player" type="Node3D"]
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.152533, 0)
+sync_to_physics = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10374, 0)
+shape = SubResource("CapsuleShape3D_u8vuu")
+debug_color = Color(0, 0.6, 0.701961, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10468, 0)
+mesh = SubResource("CapsuleMesh_u8vuu")

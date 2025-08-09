@@ -1,9 +1,9 @@
 extends Camera3D
 
 # How fast the camera moves in meters per second.
-@export var speed = 0.25
+@export var speed := 0.25
 # How fast the camera pans.
-@export var sensitivity = 0.004
+@export var sensitivity := 0.004
 
 var playerInput = Vector3.ZERO
 var targetVelocity = Vector3.ZERO

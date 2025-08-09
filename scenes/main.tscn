@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnhlurl2hvw3c"]
+[gd_scene load_steps=8 format=3 uid="uid://bnhlurl2hvw3c"]
 
 [ext_resource type="Script" uid="uid://dsx3hxps6i3fc" path="res://scripts/global.gd" id="1_jyhfs"]
 [ext_resource type="Script" uid="uid://dov05uvlieel2" path="res://scripts/map.gd" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://dosexl2pso3b3" path="res://scripts/movement.gd" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dgt0mr1gllh0u" path="res://scenes/card.tscn" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://byatnybcyi6ut" path="res://scenes/player.tscn" id="4_o6xl0"]
 [ext_resource type="Script" uid="uid://v5ua8e8tv3sh" path="res://scripts/handCardContainer.gd" id="4_tbgi4"]
 [ext_resource type="Script" uid="uid://boe3do26cbf14" path="res://scripts/ui.gd" id="4_tefeu"]
 
@@ -16,11 +17,14 @@ script = ExtResource("1_o5qli")
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.39298, 0)
 omni_range = 42.449
+omni_attenuation = 0.5
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -6)
 fov = 102.5
 script = ExtResource("2_jyhfs")
+
+[node name="Player" parent="." instance=ExtResource("4_o6xl0")]
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("4_tefeu")
